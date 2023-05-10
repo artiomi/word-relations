@@ -1,8 +1,10 @@
 # Word relations app
 
 ### Build
-For further reference, please consider the following sections:
+`mvn clean compile`
 
 ### Run
-The following guides illustrate how to use some features concretely:
-
+```
+mvn spring-boot:run
+```
+* [Swagger documentation](http://localhost:8080/swagger-ui/index.html)
