@@ -16,8 +16,9 @@ public class RelationCreateRequest {
   @NotNull
   private Relation relation;
 
-  public enum Relation{
+  public enum Relation {
     SYNONYM, ANTONYM, RELATED
+
   }
 
 }
