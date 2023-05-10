@@ -11,9 +11,9 @@ public class RelationMapper {
 
   public WordRelation createRequest2WordRelation(RelationCreateRequest request) {
     return WordRelation.builder()
-        .id(String.format("%s_%s", request.getWordOne(), request.getWordTwo()))
-        .wordOne(request.getWordOne())
-        .wordTwo(request.getWordTwo())
+        .id(IdGenerator.generate(request.getWordOne(), request.getWordTwo()))
+        .wordOne(IdGenerator.trimAndLowercase(request.getWordOne()))
+        .wordTwo(IdGenerator.trimAndLowercase(request.getWordTwo()))
         .relationType(RelationTypes.valueOf(request.getRelation().toString()))
         .build();
   }
