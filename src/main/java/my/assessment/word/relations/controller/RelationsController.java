@@ -1,12 +1,11 @@
 package my.assessment.word.relations.controller;
 
+import java.util.Optional;
 import javax.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import my.assessment.word.relations.WordRelationsSvc;
-import my.assessment.word.relations.domain.WordRelation;
-import my.assessment.word.relations.util.RelationMapper;
+import my.assessment.word.relations.controller.RelationCreateRequest.Relation;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -35,8 +34,15 @@ public class RelationsController {
   }
 
   @GetMapping
-  public ResponseEntity<Page<RelationResponse>> listRelations(Pageable pageable){
-    Page<RelationResponse> relationResponses = wordRelationsSvc.listRelations(pageable);
+  public ResponseEntity<Page<RelationResponse>> listRelations(
+      @RequestParam Optional<Integer> page,
+      @RequestParam Optional<Integer> size,
+      @RequestParam(required = false) Relation relationType) {
+    ListRequest listRequest = ListRequest.builder().relationType(relationType)
+        .page(page.orElse(0))
+        .pageSize(size.orElse(100))
+        .build();
+    Page<RelationResponse> relationResponses = wordRelationsSvc.listRelations(listRequest);
     return ResponseEntity.ok(relationResponses);
   }
 
