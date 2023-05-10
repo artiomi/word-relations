@@ -1,4 +1,4 @@
-package com.test.word.relations;
+package my.assessment.word.relations;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -8,7 +8,7 @@
 		<version>2.7.11</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.test</groupId>
+	<groupId>my.assessment</groupId>
 	<artifactId>word-relations</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>word-relations</name>

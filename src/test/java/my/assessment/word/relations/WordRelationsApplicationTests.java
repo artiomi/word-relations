@@ -1,4 +1,4 @@
-package com.test.word.relations;
+package my.assessment.word.relations;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
