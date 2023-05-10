@@ -9,11 +9,11 @@ import org.springframework.validation.annotation.Validated;
 @Validated
 public class RelationCreateRequest {
 
-  @NotEmpty
+  @NotEmpty(message = "not allowed to be null or empty")
   private String wordOne;
-  @NotEmpty
+  @NotEmpty(message = "not allowed to be null or empty")
   private String wordTwo;
-  @NotNull
+  @NotNull(message = "not allowed to be null")
   private Relation relation;
 
   public enum Relation {
